@@ -9,4 +9,12 @@ public class SemDesconto implements Desconto{
 		return "Normal";
 	}
 
+	@Override
+	public BigDecimal aplicarDescontoSobre(BigDecimal precoOriginal) {
+		// TODO Auto-generated method stub
+		return precoOriginal;
+	}
+
 }
+
+

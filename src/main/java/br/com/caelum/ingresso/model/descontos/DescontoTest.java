@@ -9,13 +9,14 @@ import org.junit.Test;
 
 import br.com.caelum.ingresso.model.Filme;
 import br.com.caelum.ingresso.model.Ingresso;
+import br.com.caelum.ingresso.model.Lugar;
 import br.com.caelum.ingresso.model.Sala;
 import br.com.caelum.ingresso.model.Sessao;
 
 public class DescontoTest {
 	@Test
 	public void naoDeveCOncederDescontoParaIngressoNormal() {
-		
+		Lugar lugar = new Lugar("A", 1);
 		Sala sala = new Sala("Eldorado - IMAX", new BigDecimal("20:5"));
 		Filme filme = new Filme("Rogue One", Duration.ofMinutes(120),
 				"SCI-FI", new BigDecimal("12"));
@@ -29,7 +30,7 @@ public class DescontoTest {
 	
 	@Test
 	public void deveConcederDescontoDe30PorCentoParaIngressosDeClientesDeBancos() {
-		
+		Lugar lugar = new Lugar("A", 1);
 		Sala sala = new Sala("Eldorado - IMAX", new BigDecimal("20:5"));
 		Filme filme = new Filme("Rogue One", Duration.ofMinutes(120),
 				"SCI-FI", new BigDecimal("12"));
@@ -43,7 +44,7 @@ public class DescontoTest {
 	
 	@Test
 	public void deveConcederDescontoDe50PorCentoParaIngressosDeEstudantes() {
-		
+		Lugar lugar = new Lugar("A", 1);
 		Sala sala = new Sala("Eldorado - IMAX", new BigDecimal("20:5"));
 		Filme filme = new Filme("Rogue One", Duration.ofMinutes(120),
 				"SCI-FI", new BigDecimal("12"));

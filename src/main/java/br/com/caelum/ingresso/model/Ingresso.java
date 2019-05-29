@@ -23,7 +23,7 @@ public class Ingresso {
 	
 	@ManyToOne
 	private Sessao sessao;
-	private BigDecimal preco;
+	
 	
 	public Ingresso(Sessao sessao, Desconto tipoDeDesconto) {
 		this.sessao = sessao;
