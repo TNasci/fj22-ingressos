@@ -29,10 +29,11 @@ public class Ingresso {
 		this.sessao = sessao;
 		this.preco = tipoDeDesconto.aplicarDescontoSobre(sessao.getPreco());
 	}
-	@ManyToOne
-	private Lugar lugar;
 	
 	private BigDecimal preco;
+	
+	@ManyToOne
+	private Lugar lugar;
 	
 	@Enumerated(EnumType.STRING)
 	private TipoDeIngresso tipoDeIngresso;
@@ -45,6 +46,30 @@ public class Ingresso {
 		this.lugar = lugar;
 	}
 	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Lugar getLugar() {
+		return lugar;
+	}
+
+	public void setLugar(Lugar lugar) {
+		this.lugar = lugar;
+	}
+
+	public TipoDeIngresso getTipoDeIngresso() {
+		return tipoDeIngresso;
+	}
+
+	public void setTipoDeIngresso(TipoDeIngresso tipoDeIngresso) {
+		this.tipoDeIngresso = tipoDeIngresso;
+	}
+
 	/**
 	 * @deprecated hibernate only
 	 */
@@ -69,6 +94,11 @@ public class Ingresso {
 
 	public void setSessao(Sessao sessao) {
 		this.sessao = sessao;
+	}
+
+	public static Object stream() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 
