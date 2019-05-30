@@ -15,9 +15,19 @@ public class CarrinhoForm {
 	
 	private List<Ingresso> ingressos = new ArrayList<>();
 	
+	public List<Ingresso> getIngressos() {
+		return ingressos;
+	}
+
+	public void setIngressos(List<Ingresso> ingressos) {
+		this.ingressos = ingressos;
+	}
+
 	public List<Ingresso> toIngressos(SessaoDao sessaoDao, LugarDao lugarDao){
-		
+		System.out.print("passou aqui to ingresos");
 		return this.ingressos.stream().map(ingresso -> {
+			
+			System.out.print("passou aqui to ingresos");
 			Sessao sessao = sessaoDao.findOne(ingresso.getSessao().getId());
 			Lugar lugar = lugarDao.findOne(ingresso.getLugar().getId());
 			TipoDeIngresso tipoDeIngresso = ingresso.getTipoDeIngresso();

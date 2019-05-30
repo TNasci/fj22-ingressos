@@ -13,6 +13,7 @@ public class Carrinho {
 	private List<Ingresso> ingressos = new ArrayList<>();
 
 	public void add(Ingresso ingresso) {
+		System.out.print("passou aqui");
 		ingressos.add(ingresso);
 	}
 

@@ -12,23 +12,22 @@ import br.com.caelum.ingresso.model.form.CarrinhoForm;
 
 @Controller
 public class CompraController {
-	
+
 	@Autowired
 	private SessaoDao sessaoDao;
 	@Autowired
 	private LugarDao lugarDao;
-	
+
 	@Autowired
 	private Carrinho carrinho;
-	
+
 	@PostMapping("/compra/ingressos")
 	public ModelAndView enviarParaPagamento(CarrinhoForm carrinhoForm) {
 		ModelAndView modelAndView = new ModelAndView("redirect:/compra");
-		
-	
-	carrinhoForm.toIngressos(sessaoDao, lugarDao).forEach(carrinho::add);
-	
-	return modelAndView;
+		System.out.print("passou aqui");
+		carrinhoForm.toIngressos(sessaoDao, lugarDao).forEach(carrinho::add);
+
+		return modelAndView;
 	}
-	
+
 }
